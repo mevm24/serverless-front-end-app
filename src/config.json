@@ -1,0 +1,5 @@
+{
+	"REGION": "us-east-1",
+	"STAGE": "dev",
+	"REACT_APP_API_ENDPOINT": "https://e0xro9u5e9.execute-api.us-east-1.amazonaws.com/dev"
+}

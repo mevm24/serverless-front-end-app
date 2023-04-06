@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Layout from './pages/Layout';
+import NoPage from './pages/NoPage';
+import { Records } from './pages/Records';
+import { Operation } from './pages/Operation';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	return (
+		<div className='App'>
+			<div className='container max-w-full max-h-full'>
+				<HashRouter>
+					<Routes>
+						<Route path='/' element={<Layout />}>
+							<Route index path='/' element={<Operation />} />
+							<Route path='/records/' element={<Records />} />
+							<Route path='*' element={<NoPage />} />
+						</Route>
+					</Routes>
+				</HashRouter>
+			</div>
+		</div>
+	);
+};
 
 export default App;
